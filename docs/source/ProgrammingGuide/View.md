@@ -59,7 +59,7 @@ Note that the above used constructor is not necessarily available for all view t
 Another important thing to keep in mind is that a `View` handle is a stateful object. It is not legal to create a `View` handle from raw memory by typecasting a pointer. To call any operator on a `View,` including the assignment operator, its constructor must have been called before. If it is necessary to initialize raw memory with a `View` handle, one can legally do so using placement new. The above has nothing to do with the data a `View` is referencing. It is completely legal to give a typecast pointer to the constructor of an unmanaged `View`.
 
 ```c++
-Kokkos::View<int*> *a_ptr = (Kokkos::View<int*>*) malloc(10*sizeof(View<int*);
+Kokkos::View<int*> *a_ptr = (Kokkos::View<int*>*) malloc(10*sizeof(View<int*));
 a_ptr[0] = Kokkos::View<int*>("A0",1000); // This is illegal
 new(&a_ptr[1]) Kokkos::View<int*>("A1",10000); // This is legal 
 ```
