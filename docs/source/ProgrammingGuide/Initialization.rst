@@ -49,7 +49,7 @@ Kokkos chooses the two spaces using the following list:
 8. `Kokkos::Threads`
 9. `Kokkos::Serial`
 
-The highest execution space in the list that is enabled is Kokkos' default execution space, and the highest enabled host execution space is Kokkos' default host execution space. For example, if  `Kokkos::Cuda`, `Kokkos::OpenMP`, and `Kokkos::Serial` are enabled, then `Kokkos::Cuda` is the default execution space and `Kokkos::OpenMP` is the default host execution space.:sup:`1`  In cases where the highest enabled backend is a host parallel execution space the `DefaultExecutionSpace` and the `DefaultHostExecutionSpace` will be the same.
+The highest execution space in the list that is enabled is Kokkos' default execution space, and the highest enabled host execution space is Kokkos' default host execution space. For example, if  `Kokkos::Cuda`, `Kokkos::OpenMP`, and `Kokkos::Serial` are enabled, then `Kokkos::Cuda` is the default execution space and `Kokkos::OpenMP` is the default host execution space. :sup:`1`  In cases where the highest enabled backend is a host parallel execution space the `DefaultExecutionSpace` and the `DefaultHostExecutionSpace` will be the same.
 
 `Kokkos::initialize <../API/Initialize-and-Finalize.html#kokos-initialize>`_ parses the command line for flags prefixed with `--kokkos-`, and removes all recognized flags. Argument options are given with an equals (`=`) sign. If the same argument occurs more than once, the last one is used. For example, the arguments
 
@@ -76,7 +76,7 @@ Table 5.1: Command-line options for Kokkos::initialize
   * - --kokkos-device-id=INT
     - specify device id to be used by Kokkos
   * - --kokkos-map-device-id-by=(random\|mpi_rank), default: mpi_rank
-    - strategy to select device-id automatically from available devices: random or mpi_rank:sup:`2`
+    - strategy to select device-id automatically from available devices: random or mpi_rank :sup:`2`
   * - --kokkos-tools-libs=STR      
     - specify which of the tools to use. Must either be full path to library or name of library if the path is present in the runtime library search path (e.g. LD_LIBRARY_PATH)
   * - --kokkos-tools-help          
@@ -118,7 +118,7 @@ Here is an example of how to use the struct.
 
     Kokkos::InitializationSettings settings;
     // 8 (CPU) threads
-    settinge.set_num_threads(8);
+    settings.set_num_threads(8);
     // If Kokkos was built with CUDA enabled, use the GPU with device ID 1.
     settings.set_device_id(1);
 
