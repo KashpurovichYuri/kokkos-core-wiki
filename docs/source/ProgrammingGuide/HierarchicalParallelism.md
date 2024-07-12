@@ -297,7 +297,7 @@ parallel_for (TeamPolicy<> (league_size, team_size),
         [=] (int& i, Scalar& lsum) {
           // ...
           lsum *= ...;
-        }, Kokkos::Experimental::Prod<Scalar>(product);
+        }, Kokkos::Experimental::Prod<Scalar>(product));
       });
   });
 ```
