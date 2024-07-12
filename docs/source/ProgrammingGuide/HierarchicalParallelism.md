@@ -254,7 +254,7 @@ parallel_for (TeamPolicy<> (league_size, team_size),
       [=] (int& i, Scalar& lsum) {
         // ...
         lsum *= ...;
-      }, Kokkos::Experimental::Prod<Scalar>(product);
+      }, Kokkos::Experimental::Prod<Scalar>(product));
   });
 ```
 Note that custom reductions must employ one of the functor join patterns recognized by Kokkos; these include `Sum, Prod, Min, Max, LAnd, LOr, BAnd, BOr, ValLocScalar, MinLoc, MaxLoc, MinMaxScalar, MinMax, MinMaxLocScalar` and `MinMaxLoc`.
