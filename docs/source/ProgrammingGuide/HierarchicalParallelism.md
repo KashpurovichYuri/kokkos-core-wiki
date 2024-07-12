@@ -103,7 +103,7 @@ parallel_for (policy, KOKKOS_LAMBDA (member_type team_member) {
     team_member.team_barrier();
 
     // Now a can be used by every team member
-    c(team_member.league_rank(),team_member.team_rank()) = a(team_member.league_rank();
+    c(team_member.league_rank(),team_member.team_rank()) = a(team_member.league_rank());
   });
 ```
 
