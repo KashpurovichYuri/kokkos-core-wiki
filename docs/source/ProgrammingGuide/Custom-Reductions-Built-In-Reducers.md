@@ -68,7 +68,7 @@ Kokkos::View<double**> A("A",N,M);
 // Create a variable for the result
 typedef Kokkos::MinMaxLoc<double, Kokkos::pair<int,int>> reducer_type;
 typedef reducer_type::value_type value_type;
-value_type minmaxloc
+value_type minmaxloc;
 
 typedef Kokkos::TeamPolicy<>::member_type team_type;
 
